@@ -8,7 +8,7 @@ export default function App() {
     const res = await fetch("https://api.adviceslip.com/advice");
     const data = await res.json();
     setAdvice(data.slip.advice);
-    setCount((c) => c + 1);
+    /*setCount((c) => c + 1); */
   }
 
   useEffect(function () {
@@ -17,10 +17,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>
-        {" "}
-        myAdvice for the day: <h2>{advice}</h2>{" "}
-      </h1>
+      <h1>myAdvice for the day: {advice}</h1>
       <button onClick={getAdvice}>Get Advice</button>
       <Message count={count} />
     </div>
